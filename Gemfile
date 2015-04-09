@@ -22,7 +22,8 @@ else
 
   conf = YAML.load(File.read(dbfile))
   environment = conf[env]
-  adapter = environment['adapter'] if environment
+  # adapter = environment['adapter'] if environment
+  adapter = 'postgresql'
   raise 'You need define an adapter in your database.yml or set your RAILS_ENV variable' if adapter == '' || adapter.nil?
   case adapter
   when 'sqlite3'
